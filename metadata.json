@@ -1,0 +1,5 @@
+{
+  "name": "Loan AI Analyzer",
+  "description": "Intelligent financial analyzer. Verifies Repayment Capacity (DSCR), Total Debt Load (Leverage), and Short-Term Survival (Liquidity) for loan eligibility.",
+  "requestFramePermissions": []
+}
