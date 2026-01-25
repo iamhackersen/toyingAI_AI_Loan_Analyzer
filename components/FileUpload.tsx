@@ -62,7 +62,10 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect, disabled }) => {
     <div className="w-full max-w-2xl mx-auto">
       <div 
         className={`relative flex flex-col items-center justify-center w-full h-64 border-2 border-dashed rounded-xl transition-all duration-200 ease-in-out
-          ${dragActive ? 'border-blue-500 bg-blue-50' : 'border-slate-300 bg-white hover:bg-slate-50'}
+          ${dragActive 
+            ? 'border-blue-500 bg-blue-50 dark:border-green-500 dark:bg-green-900/20' 
+            : 'border-slate-300 bg-white hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900/50 dark:hover:bg-slate-800/50'
+          }
           ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
         `}
         onDragEnter={handleDrag}
@@ -81,41 +84,45 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect, disabled }) => {
         />
         
         <div className="flex flex-col items-center justify-center pt-5 pb-6 text-center px-4">
-          <div className={`p-4 rounded-full mb-4 ${dragActive ? 'bg-blue-100 text-blue-600' : 'bg-slate-100 text-slate-500'}`}>
+          <div className={`p-4 rounded-full mb-4 transition-colors ${
+            dragActive 
+            ? 'bg-blue-100 text-blue-600 dark:bg-green-900/40 dark:text-green-400' 
+            : 'bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400'
+          }`}>
             <Upload className="w-8 h-8" />
           </div>
-          <p className="mb-2 text-lg font-medium text-slate-700">
+          <p className="mb-2 text-lg font-medium text-slate-700 dark:text-slate-200">
             {dragActive ? "Drop the file here" : "Click or drag to upload statement"}
           </p>
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-slate-500 dark:text-slate-500">
             PDF, PNG, or JPG (max 10MB)
           </p>
         </div>
       </div>
 
       {error && (
-        <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg flex items-center text-red-700 text-sm">
+        <div className="mt-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-900/50 rounded-lg flex items-center text-red-700 dark:text-red-400 text-sm">
           <AlertCircle className="w-4 h-4 mr-2 flex-shrink-0" />
           {error}
         </div>
       )}
 
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-center">
-         <div className="p-4 bg-white rounded-lg shadow-sm border border-slate-100">
-            <div className="text-blue-600 font-semibold mb-1">Step 1</div>
-            <div className="text-xs text-slate-600">Upload Files</div>
+         <div className="p-4 bg-white dark:bg-slate-900/50 rounded-lg shadow-sm border border-slate-100 dark:border-green-900/30 transition-colors">
+            <div className="text-blue-600 dark:text-green-500 font-semibold mb-1">Step 1</div>
+            <div className="text-xs text-slate-600 dark:text-slate-400">Upload Files</div>
          </div>
-         <div className="p-4 bg-white rounded-lg shadow-sm border border-slate-100">
-            <div className="text-blue-600 font-semibold mb-1">Step 2</div>
-            <div className="text-xs text-slate-600">Extract Data</div>
+         <div className="p-4 bg-white dark:bg-slate-900/50 rounded-lg shadow-sm border border-slate-100 dark:border-green-900/30 transition-colors">
+            <div className="text-blue-600 dark:text-green-500 font-semibold mb-1">Step 2</div>
+            <div className="text-xs text-slate-600 dark:text-slate-400">Extract Data</div>
          </div>
-         <div className="p-4 bg-white rounded-lg shadow-sm border border-slate-100">
-            <div className="text-blue-600 font-semibold mb-1">Step 3</div>
-            <div className="text-xs text-slate-600">Calculate Ratios</div>
+         <div className="p-4 bg-white dark:bg-slate-900/50 rounded-lg shadow-sm border border-slate-100 dark:border-green-900/30 transition-colors">
+            <div className="text-blue-600 dark:text-green-500 font-semibold mb-1">Step 3</div>
+            <div className="text-xs text-slate-600 dark:text-slate-400">Calculate Ratios</div>
          </div>
-         <div className="p-4 bg-white rounded-lg shadow-sm border border-slate-100">
-            <div className="text-blue-600 font-semibold mb-1">Step 4</div>
-            <div className="text-xs text-slate-600">Get Verdict</div>
+         <div className="p-4 bg-white dark:bg-slate-900/50 rounded-lg shadow-sm border border-slate-100 dark:border-green-900/30 transition-colors">
+            <div className="text-blue-600 dark:text-green-500 font-semibold mb-1">Step 4</div>
+            <div className="text-xs text-slate-600 dark:text-slate-400">Get Verdict</div>
          </div>
       </div>
     </div>
