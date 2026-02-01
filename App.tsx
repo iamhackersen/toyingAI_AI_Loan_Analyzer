@@ -162,7 +162,7 @@ const App: React.FC = () => {
       <footer className="bg-white dark:bg-black border-t border-slate-200 dark:border-green-900/30 mt-auto transition-colors">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
           <p className="text-center text-xs text-slate-400 dark:text-slate-500">
-            Powered by Gemini 2.5 Flash &bull; Private & Secure Analysis &bull; Not Financial Advice
+            Powered by Gemini 3.0 Pro &bull; Private & Secure Analysis &bull; Not Financial Advice
           </p>
         </div>
       </footer>
